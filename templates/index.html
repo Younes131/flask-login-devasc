@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="home">
+  <h1>Welkom</h1>
+
+  {% if user %}
+    <p>Ingelogd als <strong>{{ user }}</strong></p>
+
+    <form method="post" action="{{ url_for('logout') }}">
+      <button type="submit">Logout</button>
+    </form>
+  {% else %}
+    <p>
+      Ga naar
+      <a href="{{ url_for('signup_page') }}">Signup</a>
+      of
+      <a href="{{ url_for('login_page') }}">Login</a>.
+    </p>
+  {% endif %}
+</div>
+{% endblock %}

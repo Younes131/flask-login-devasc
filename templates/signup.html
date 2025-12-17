@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth">
+  <h2>Signup (secure v2)</h2>
+
+  <form method="post" action="{{ url_for('signup_v2') }}">
+    <label>Gebruikersnaam
+      <input name="username" required>
+    </label>
+
+    <label>Wachtwoord
+      <input name="password" type="password" required>
+    </label>
+
+    <button type="submit">Account maken</button>
+  </form>
+
+  <p class="muted">API endpoint: POST /signup/v2</p>
+</div>
+{% endblock %}

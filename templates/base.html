@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Flask Login Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header><a href="{{ url_for('home') }}">Home</a> · <a href="{{ url_for('signup_page') }}">Signup</a> · <a href="{{ url_for('login_page') }}">Login</a></header>
+  <hr>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}<p>{{ messages[0] }}</p>{% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</body>
+</html>
