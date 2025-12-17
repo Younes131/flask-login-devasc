@@ -3,7 +3,7 @@ import sqlite3, hashlib, os
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET", "dev-secret")  # zet in env in productie
-DB_NAME = "user.db"
+DB_NAME = "data/user.db"
 
 # ---- helpers -------------------------------------------------
 def db():
